@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 # ruby '2.2.0'
 
+#devise
+gem 'devise' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 # Use SCSS for stylesheets

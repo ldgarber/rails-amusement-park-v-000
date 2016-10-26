@@ -1,0 +1,35 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  Height: <%= f.text_field :height %><br>
+  Happiness: <%= f.text_field :happiness %><br>
+  Nausea: <%= f.text_field :nausea %><br>
+  Tickets: <%= f.text_field :tickets %></br>
+  
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  Admin user? <%= f.check_box :admin, id: "user_admin" %><br>
+
+  <%= f.submit "Create User" %> 
+
+<% end %>
+
+<%= render "users/shared/links" %>

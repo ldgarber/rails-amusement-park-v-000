@@ -22,7 +22,7 @@ describe 'Feature Test: User Signup', :type => :feature do
 
   it 'successfully logs in as non-admin' do
     visit_signin
-    expect(current_path).to eq('/signin')
+    expect(current_path).to eq('/users/sign_in')
     user_login
     expect(current_path).to eq('/users/1')
     expect(page).to have_content("Mindy")
@@ -49,7 +49,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     )
     visit '/users/1'
     expect(current_path).to eq('/')
-    expect(page).to have_content("Sign Up")
+    expect(page).to have_content("Sign up")
   end
 
   it 'successfully signs up as admin' do
@@ -69,7 +69,7 @@ describe 'Feature Test: User Signup', :type => :feature do
 
   it 'successfully logs in as admin' do
     visit_signin
-    expect(current_path).to eq('/signin')
+    expect(current_path).to eq('/users/sign_in')
     admin_login
     expect(current_path).to eq('/users/2')
     expect(page).to have_content("Walt Disney")
